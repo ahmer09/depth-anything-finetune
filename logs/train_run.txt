@@ -1,0 +1,285 @@
+xFormers not available
+xFormers not available
+14:27:02 | Logging to: logs/train_20260302_142702.log
+14:27:02 | Device: cuda
+14:27:02 |   GPU: Tesla T4
+14:27:02 |   Memory: 15.8 GB
+14:27:02 | 
+============================================================
+14:27:02 |   Encoder:     vits
+14:27:02 |   Checkpoint:  checkpoints/depth_anything_v2_vits.pth
+14:27:02 |   Image size:  518
+14:27:02 |   Batch size:  8
+14:27:02 |   LR:          0.0001
+14:27:02 |   Epochs:      30
+14:27:02 |   Train path:  data/nyu_depth/train
+14:27:02 |   Val source:  data/nyu_depth/test (skip first 0 files)
+14:27:02 |   Losses:      SiLog=True, GradMatch=True
+14:27:02 |   Freeze:      Encoder frozen for first 5 epochs
+14:27:02 | ============================================================
+
+14:27:02 |   Dataset: data/nyu_depth/train  →  7000 pairs (augment=True)
+14:27:02 |   Test set total: 500 files
+14:27:02 |   Using 500 files for validation (skipping first 0)
+14:27:02 |   Dataset: data/nyu_depth/test  →  500 pairs (augment=False)
+14:27:02 | 
+Loading model: vits ...
+14:27:02 |   Loading pre-trained weights from: checkpoints/depth_anything_v2_vits.pth
+14:27:02 |   ✓ Weights loaded
+14:27:03 |   Total params:     24.8M
+14:27:03 |   Trainable params: 24.8M
+14:27:03 |   🔒 Encoder FROZEN (175 param groups) — decoder-only training
+14:27:03 |   Trainable params: 2.7M
+14:27:03 |   Optimizer: AdamW (decoder_lr=0.001, wd=0.0001)
+14:27:03 | 
+============================================================
+14:27:03 |   Starting training for 30 epochs
+14:27:03 |   Checkpoints will be saved to: checkpoints/finetuned
+14:27:03 | ============================================================
+
+14:27:03 | 
+--- Epoch 1/30  LR: 1.00e-03  [decoder-only] ---
+14:27:58 |   [Epoch 1/30]  Batch 100/875  Loss: 0.4696  Avg: 0.5822  GradNorm: 0.53
+14:28:51 |   [Epoch 1/30]  Batch 200/875  Loss: 0.4581  Avg: 0.5213  GradNorm: 0.53
+14:29:44 |   [Epoch 1/30]  Batch 300/875  Loss: 0.4834  Avg: 0.4945  GradNorm: 0.98
+14:30:38 |   [Epoch 1/30]  Batch 400/875  Loss: 0.4193  Avg: 0.4757  GradNorm: 0.29
+14:31:32 |   [Epoch 1/30]  Batch 500/875  Loss: 0.3467  Avg: 0.4633  GradNorm: 0.53
+14:32:26 |   [Epoch 1/30]  Batch 600/875  Loss: 0.3768  Avg: 0.4566  GradNorm: 0.29
+14:33:19 |   [Epoch 1/30]  Batch 700/875  Loss: 0.4575  Avg: 0.4514  GradNorm: 0.47
+14:34:13 |   [Epoch 1/30]  Batch 800/875  Loss: 0.4242  Avg: 0.4483  GradNorm: 0.49
+14:34:53 |   [Epoch 1/30]  Batch 875/875  Loss: 0.5269  Avg: 0.4451  GradNorm: 0.28
+14:35:17 |     📷 Visual samples saved to: checkpoints/finetuned/visuals/epoch_01
+14:35:17 | 
+  Epoch 1 Summary (494s):
+14:35:17 |     Train Loss:  0.4451
+14:35:17 |     Val Loss:    0.4009
+14:35:17 |     Val AbsRel:  0.4957
+14:35:17 |     Val RMSE:    0.1056
+14:35:17 |     Val SSIM:    0.8013
+14:35:17 |     Val δ1:      0.5811
+14:35:17 |     Val δ2:      0.8150
+14:35:17 |     Val δ3:      0.9083
+14:35:18 |     ★ New best model saved! (AbsRel=0.4957, δ1=0.5811)
+14:35:18 | 
+--- Epoch 2/30  LR: 1.00e-03  [decoder-only] ---
+14:36:11 |   [Epoch 2/30]  Batch 100/875  Loss: 0.3717  Avg: 0.4154  GradNorm: 0.20
+14:37:05 |   [Epoch 2/30]  Batch 200/875  Loss: 0.5386  Avg: 0.4083  GradNorm: 0.39
+14:37:59 |   [Epoch 2/30]  Batch 300/875  Loss: 0.4817  Avg: 0.4041  GradNorm: 0.29
+14:38:52 |   [Epoch 2/30]  Batch 400/875  Loss: 0.3363  Avg: 0.4020  GradNorm: 0.59
+14:39:46 |   [Epoch 2/30]  Batch 500/875  Loss: 0.3648  Avg: 0.4034  GradNorm: 0.38
+14:40:40 |   [Epoch 2/30]  Batch 600/875  Loss: 0.3154  Avg: 0.4015  GradNorm: 0.18
+14:41:33 |   [Epoch 2/30]  Batch 700/875  Loss: 0.4377  Avg: 0.3995  GradNorm: 0.26
+14:42:27 |   [Epoch 2/30]  Batch 800/875  Loss: 0.3642  Avg: 0.3963  GradNorm: 0.19
+14:43:07 |   [Epoch 2/30]  Batch 875/875  Loss: 0.5527  Avg: 0.3959  GradNorm: 0.33
+14:43:30 | 
+  Epoch 2 Summary (493s):
+14:43:30 |     Train Loss:  0.3959
+14:43:30 |     Val Loss:    0.3849
+14:43:30 |     Val AbsRel:  0.4137
+14:43:30 |     Val RMSE:    0.1038
+14:43:30 |     Val SSIM:    0.8129
+14:43:30 |     Val δ1:      0.5884
+14:43:30 |     Val δ2:      0.8187
+14:43:30 |     Val δ3:      0.9109
+14:43:31 |     ★ New best model saved! (AbsRel=0.4137, δ1=0.5884)
+14:43:31 | 
+--- Epoch 3/30  LR: 9.69e-04  [decoder-only] ---
+14:44:25 |   [Epoch 3/30]  Batch 100/875  Loss: 0.4458  Avg: 0.3913  GradNorm: 0.20
+14:45:18 |   [Epoch 3/30]  Batch 200/875  Loss: 0.4825  Avg: 0.3893  GradNorm: 0.53
+14:46:12 |   [Epoch 3/30]  Batch 300/875  Loss: 0.3955  Avg: 0.3885  GradNorm: 0.15
+14:47:05 |   [Epoch 3/30]  Batch 400/875  Loss: 0.4801  Avg: 0.3905  GradNorm: 0.31
+14:47:59 |   [Epoch 3/30]  Batch 500/875  Loss: 0.5628  Avg: 0.3927  GradNorm: 0.20
+14:48:52 |   [Epoch 3/30]  Batch 600/875  Loss: 0.5035  Avg: 0.3918  GradNorm: 0.33
+14:49:46 |   [Epoch 3/30]  Batch 700/875  Loss: 0.3648  Avg: 0.3879  GradNorm: 0.17
+14:50:39 |   [Epoch 3/30]  Batch 800/875  Loss: 0.3687  Avg: 0.3862  GradNorm: 0.30
+14:51:19 |   [Epoch 3/30]  Batch 875/875  Loss: 0.4342  Avg: 0.3856  GradNorm: 0.19
+14:51:43 | 
+  Epoch 3 Summary (492s):
+14:51:43 |     Train Loss:  0.3856
+14:51:43 |     Val Loss:    0.3840
+14:51:43 |     Val AbsRel:  0.4733
+14:51:43 |     Val RMSE:    0.1019
+14:51:43 |     Val SSIM:    0.8126
+14:51:43 |     Val δ1:      0.6058
+14:51:43 |     Val δ2:      0.8257
+14:51:43 |     Val δ3:      0.9139
+14:51:43 |     ★ New best model saved! (AbsRel=0.4137, δ1=0.6058)
+14:51:43 | 
+--- Epoch 4/30  LR: 9.38e-04  [decoder-only] ---
+14:52:37 |   [Epoch 4/30]  Batch 100/875  Loss: 0.3823  Avg: 0.3624  GradNorm: 0.25
+14:53:30 |   [Epoch 4/30]  Batch 200/875  Loss: 0.3394  Avg: 0.3706  GradNorm: 0.19
+14:54:24 |   [Epoch 4/30]  Batch 300/875  Loss: 0.4698  Avg: 0.3698  GradNorm: 0.32
+14:55:17 |   [Epoch 4/30]  Batch 400/875  Loss: 0.3718  Avg: 0.3721  GradNorm: 0.34
+14:56:11 |   [Epoch 4/30]  Batch 500/875  Loss: 0.3407  Avg: 0.3725  GradNorm: 0.18
+14:57:04 |   [Epoch 4/30]  Batch 600/875  Loss: 0.3306  Avg: 0.3731  GradNorm: 0.30
+14:57:58 |   [Epoch 4/30]  Batch 700/875  Loss: 0.3055  Avg: 0.3747  GradNorm: 0.19
+14:58:51 |   [Epoch 4/30]  Batch 800/875  Loss: 0.3380  Avg: 0.3751  GradNorm: 0.33
+14:59:31 |   [Epoch 4/30]  Batch 875/875  Loss: 0.3749  Avg: 0.3762  GradNorm: 0.16
+14:59:55 | 
+  Epoch 4 Summary (492s):
+14:59:55 |     Train Loss:  0.3762
+14:59:55 |     Val Loss:    0.3871
+14:59:55 |     Val AbsRel:  0.4516
+14:59:55 |     Val RMSE:    0.1016
+14:59:55 |     Val SSIM:    0.8136
+14:59:55 |     Val δ1:      0.6006
+14:59:55 |     Val δ2:      0.8266
+14:59:55 |     Val δ3:      0.9128
+14:59:55 | 
+--- Epoch 5/30  LR: 9.06e-04  [decoder-only] ---
+15:00:49 |   [Epoch 5/30]  Batch 100/875  Loss: 0.3927  Avg: 0.3758  GradNorm: 0.34
+15:01:42 |   [Epoch 5/30]  Batch 200/875  Loss: 0.3816  Avg: 0.3736  GradNorm: 0.20
+15:02:36 |   [Epoch 5/30]  Batch 300/875  Loss: 0.3032  Avg: 0.3713  GradNorm: 0.20
+15:03:29 |   [Epoch 5/30]  Batch 400/875  Loss: 0.4044  Avg: 0.3693  GradNorm: 0.19
+15:04:23 |   [Epoch 5/30]  Batch 500/875  Loss: 0.5757  Avg: 0.3718  GradNorm: 0.43
+15:05:16 |   [Epoch 5/30]  Batch 600/875  Loss: 0.4956  Avg: 0.3709  GradNorm: 0.29
+15:06:10 |   [Epoch 5/30]  Batch 700/875  Loss: 0.3650  Avg: 0.3698  GradNorm: 0.22
+15:07:03 |   [Epoch 5/30]  Batch 800/875  Loss: 0.2881  Avg: 0.3682  GradNorm: 0.11
+15:07:43 |   [Epoch 5/30]  Batch 875/875  Loss: 0.2688  Avg: 0.3689  GradNorm: 0.20
+15:08:07 |     📷 Visual samples saved to: checkpoints/finetuned/visuals/epoch_05
+15:08:07 | 
+  Epoch 5 Summary (492s):
+15:08:07 |     Train Loss:  0.3689
+15:08:07 |     Val Loss:    0.3752
+15:08:07 |     Val AbsRel:  0.4418
+15:08:07 |     Val RMSE:    0.1002
+15:08:07 |     Val SSIM:    0.8193
+15:08:07 |     Val δ1:      0.6135
+15:08:07 |     Val δ2:      0.8343
+15:08:07 |     Val δ3:      0.9185
+15:08:07 |     ★ New best model saved! (AbsRel=0.4137, δ1=0.6135)
+15:08:07 |   🔓 Encoder UNFROZEN — full model training
+15:08:07 |   Trainable params: 24.8M
+15:08:07 | 
+--- Epoch 6/30  LR: 8.75e-05 / 8.75e-04  [full model] ---
+15:09:56 |   [Epoch 6/30]  Batch 100/875  Loss: 0.9033  Avg: 0.9073  GradNorm: 1.00
+15:11:45 |   [Epoch 6/30]  Batch 200/875  Loss: 0.8861  Avg: 0.8931  GradNorm: 1.00
+15:13:33 |   [Epoch 6/30]  Batch 300/875  Loss: 0.9062  Avg: 0.8831  GradNorm: 1.00
+15:15:22 |   [Epoch 6/30]  Batch 400/875  Loss: 0.8549  Avg: 0.8813  GradNorm: 0.32
+15:17:10 |   [Epoch 6/30]  Batch 500/875  Loss: 0.9116  Avg: 0.8849  GradNorm: 0.64
+15:18:59 |   [Epoch 6/30]  Batch 600/875  Loss: 0.8138  Avg: 0.8784  GradNorm: 0.86
+15:20:48 |   [Epoch 6/30]  Batch 700/875  Loss: 0.7844  Avg: 0.8749  GradNorm: 0.64
+15:22:37 |   [Epoch 6/30]  Batch 800/875  Loss: 0.7649  Avg: 0.8732  GradNorm: 0.41
+15:23:58 |   [Epoch 6/30]  Batch 875/875  Loss: 0.8804  Avg: 0.8735  GradNorm: 0.56
+15:24:21 | 
+  Epoch 6 Summary (974s):
+15:24:21 |     Train Loss:  0.8735
+15:24:21 |     Val Loss:    0.8266
+15:24:21 |     Val AbsRel:  2.2138
+15:24:21 |     Val RMSE:    0.2292
+15:24:21 |     Val SSIM:    0.6816
+15:24:21 |     Val δ1:      0.2246
+15:24:21 |     Val δ2:      0.4592
+15:24:21 |     Val δ3:      0.6640
+15:24:22 | 
+--- Epoch 7/30  LR: 8.43e-05 / 8.43e-04  [full model] ---
+15:26:11 |   [Epoch 7/30]  Batch 100/875  Loss: 0.8618  Avg: 0.8473  GradNorm: 0.53
+15:28:00 |   [Epoch 7/30]  Batch 200/875  Loss: 0.6827  Avg: 0.8440  GradNorm: 1.00
+15:29:49 |   [Epoch 7/30]  Batch 300/875  Loss: 0.7589  Avg: 0.8425  GradNorm: 1.00
+15:31:38 |   [Epoch 7/30]  Batch 400/875  Loss: 0.8360  Avg: 0.8485  GradNorm: 1.00
+15:33:27 |   [Epoch 7/30]  Batch 500/875  Loss: 0.8177  Avg: 0.8463  GradNorm: 0.94
+15:35:16 |   [Epoch 7/30]  Batch 600/875  Loss: 0.9468  Avg: 0.8442  GradNorm: 0.53
+15:37:05 |   [Epoch 7/30]  Batch 700/875  Loss: 0.7411  Avg: 0.8419  GradNorm: 0.48
+15:38:54 |   [Epoch 7/30]  Batch 800/875  Loss: 0.9758  Avg: 0.8422  GradNorm: 0.90
+15:40:16 |   [Epoch 7/30]  Batch 875/875  Loss: 0.8632  Avg: 0.8418  GradNorm: 0.75
+15:40:39 | 
+  Epoch 7 Summary (977s):
+15:40:39 |     Train Loss:  0.8418
+15:40:39 |     Val Loss:    0.8282
+15:40:39 |     Val AbsRel:  2.3994
+15:40:39 |     Val RMSE:    0.2235
+15:40:39 |     Val SSIM:    0.6863
+15:40:39 |     Val δ1:      0.2503
+15:40:39 |     Val δ2:      0.4995
+15:40:39 |     Val δ3:      0.6802
+15:40:39 | 
+--- Epoch 8/30  LR: 8.12e-05 / 8.12e-04  [full model] ---
+15:42:29 |   [Epoch 8/30]  Batch 100/875  Loss: 0.8856  Avg: 0.8318  GradNorm: 0.71
+15:44:18 |   [Epoch 8/30]  Batch 200/875  Loss: 0.8828  Avg: 0.8309  GradNorm: 0.53
+15:46:08 |   [Epoch 8/30]  Batch 300/875  Loss: 0.8544  Avg: 0.8333  GradNorm: 0.87
+15:47:57 |   [Epoch 8/30]  Batch 400/875  Loss: 0.8690  Avg: 0.8328  GradNorm: 0.72
+15:49:46 |   [Epoch 8/30]  Batch 500/875  Loss: 0.7577  Avg: 0.8323  GradNorm: 0.69
+15:51:36 |   [Epoch 8/30]  Batch 600/875  Loss: 0.7371  Avg: 0.8288  GradNorm: 0.77
+15:53:25 |   [Epoch 8/30]  Batch 700/875  Loss: 0.9087  Avg: 0.8271  GradNorm: 1.00
+15:55:15 |   [Epoch 8/30]  Batch 800/875  Loss: 0.8321  Avg: 0.8277  GradNorm: 0.68
+15:56:37 |   [Epoch 8/30]  Batch 875/875  Loss: 0.8371  Avg: 0.8274  GradNorm: 0.71
+15:57:00 | 
+  Epoch 8 Summary (981s):
+15:57:00 |     Train Loss:  0.8274
+15:57:00 |     Val Loss:    0.8093
+15:57:00 |     Val AbsRel:  1.6580
+15:57:00 |     Val RMSE:    0.2445
+15:57:00 |     Val SSIM:    0.6758
+15:57:00 |     Val δ1:      0.1981
+15:57:00 |     Val δ2:      0.4002
+15:57:00 |     Val δ3:      0.6024
+15:57:01 | 
+--- Epoch 9/30  LR: 7.80e-05 / 7.80e-04  [full model] ---
+15:58:51 |   [Epoch 9/30]  Batch 100/875  Loss: 0.9371  Avg: 0.8416  GradNorm: 0.71
+16:00:41 |   [Epoch 9/30]  Batch 200/875  Loss: 0.7403  Avg: 0.8311  GradNorm: 1.00
+16:02:31 |   [Epoch 9/30]  Batch 300/875  Loss: 0.7447  Avg: 0.8281  GradNorm: 0.82
+16:04:21 |   [Epoch 9/30]  Batch 400/875  Loss: 0.7274  Avg: 0.8285  GradNorm: 0.76
+16:06:12 |   [Epoch 9/30]  Batch 500/875  Loss: 0.7875  Avg: 0.8230  GradNorm: 1.00
+16:08:02 |   [Epoch 9/30]  Batch 600/875  Loss: 0.6472  Avg: 0.8172  GradNorm: 0.58
+16:09:52 |   [Epoch 9/30]  Batch 700/875  Loss: 0.8168  Avg: 0.8162  GradNorm: 0.63
+16:11:43 |   [Epoch 9/30]  Batch 800/875  Loss: 0.8008  Avg: 0.8168  GradNorm: 0.89
+16:13:06 |   [Epoch 9/30]  Batch 875/875  Loss: 0.6819  Avg: 0.8153  GradNorm: 0.78
+16:13:29 | 
+  Epoch 9 Summary (988s):
+16:13:29 |     Train Loss:  0.8153
+16:13:29 |     Val Loss:    0.7991
+16:13:29 |     Val AbsRel:  1.5701
+16:13:29 |     Val RMSE:    0.2367
+16:13:29 |     Val SSIM:    0.6703
+16:13:29 |     Val δ1:      0.2100
+16:13:29 |     Val δ2:      0.4261
+16:13:29 |     Val δ3:      0.6216
+16:13:30 | 
+--- Epoch 10/30  LR: 7.48e-05 / 7.48e-04  [full model] ---
+16:15:21 |   [Epoch 10/30]  Batch 100/875  Loss: 0.7306  Avg: 0.8097  GradNorm: 0.99
+16:17:11 |   [Epoch 10/30]  Batch 200/875  Loss: 0.9696  Avg: 0.8039  GradNorm: 0.87
+16:19:01 |   [Epoch 10/30]  Batch 300/875  Loss: 0.7940  Avg: 0.8046  GradNorm: 1.00
+16:20:51 |   [Epoch 10/30]  Batch 400/875  Loss: 0.7732  Avg: 0.8067  GradNorm: 0.90
+16:22:41 |   [Epoch 10/30]  Batch 500/875  Loss: 0.8068  Avg: 0.8066  GradNorm: 0.99
+16:24:30 |   [Epoch 10/30]  Batch 600/875  Loss: 0.8249  Avg: 0.8080  GradNorm: 0.65
+16:26:20 |   [Epoch 10/30]  Batch 700/875  Loss: 0.7618  Avg: 0.8055  GradNorm: 0.94
+16:28:09 |   [Epoch 10/30]  Batch 800/875  Loss: 0.6501  Avg: 0.8023  GradNorm: 1.00
+16:29:31 |   [Epoch 10/30]  Batch 875/875  Loss: 0.6803  Avg: 0.7992  GradNorm: 0.98
+16:29:54 |     📷 Visual samples saved to: checkpoints/finetuned/visuals/epoch_10
+16:29:54 | 
+  Epoch 10 Summary (985s):
+16:29:54 |     Train Loss:  0.7992
+16:29:54 |     Val Loss:    0.7858
+16:29:54 |     Val AbsRel:  1.7803
+16:29:54 |     Val RMSE:    0.2221
+16:29:54 |     Val SSIM:    0.6809
+16:29:54 |     Val δ1:      0.2470
+16:29:54 |     Val δ2:      0.4850
+16:29:54 |     Val δ3:      0.6704
+16:29:55 | 
+--- Epoch 11/30  LR: 7.16e-05 / 7.16e-04  [full model] ---
+16:31:44 |   [Epoch 11/30]  Batch 100/875  Loss: 0.8555  Avg: 0.7948  GradNorm: 0.96
+16:33:34 |   [Epoch 11/30]  Batch 200/875  Loss: 0.8878  Avg: 0.7880  GradNorm: 1.00
+16:35:23 |   [Epoch 11/30]  Batch 300/875  Loss: 0.7198  Avg: 0.7883  GradNorm: 1.00
+16:37:12 |   [Epoch 11/30]  Batch 400/875  Loss: 0.7096  Avg: 0.7869  GradNorm: 0.96
+16:39:01 |   [Epoch 11/30]  Batch 500/875  Loss: 0.6082  Avg: 0.7801  GradNorm: 0.71
+16:40:50 |   [Epoch 11/30]  Batch 600/875  Loss: 0.8351  Avg: 0.7834  GradNorm: 1.00
+16:42:38 |   [Epoch 11/30]  Batch 700/875  Loss: 0.8542  Avg: 0.7822  GradNorm: 0.95
+16:44:27 |   [Epoch 11/30]  Batch 800/875  Loss: 0.7413  Avg: 0.7822  GradNorm: 1.00
+16:45:49 |   [Epoch 11/30]  Batch 875/875  Loss: 0.6907  Avg: 0.7822  GradNorm: 1.00
+16:46:12 | 
+  Epoch 11 Summary (977s):
+16:46:12 |     Train Loss:  0.7822
+16:46:12 |     Val Loss:    0.7875
+16:46:12 |     Val AbsRel:  1.6652
+16:46:12 |     Val RMSE:    0.2229
+16:46:12 |     Val SSIM:    0.6843
+16:46:12 |     Val δ1:      0.2482
+16:46:12 |     Val δ2:      0.4825
+16:46:12 |     Val δ3:      0.6624
+16:46:13 | 
+--- Epoch 12/30  LR: 6.83e-05 / 6.83e-04  [full model] ---
+16:48:02 |   [Epoch 12/30]  Batch 100/875  Loss: 0.6893  Avg: 0.7578  GradNorm: 1.00
+16:49:51 |   [Epoch 12/30]  Batch 200/875  Loss: 0.6930  Avg: 0.7579  GradNorm: 0.86
+16:51:40 |   [Epoch 12/30]  Batch 300/875  Loss: 0.6543  Avg: 0.7626  GradNorm: 1.00
+16:53:28 |   [Epoch 12/30]  Batch 400/875  Loss: 0.7347  Avg: 0.7617  GradNorm: 1.00
