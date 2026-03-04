@@ -1,0 +1,40 @@
+# Model Configuration
+model:
+  encoder_type: "vits"  # Options: vits, vitb, vitl, vitg
+  checkpoint: "checkpoints/depth_anything_v2_vits.pth"
+  
+# Training Configuration
+training:
+  batch_size: 8          # Adjust based on GPU memory
+  learning_rate: 0.0001  # Lower than training from scratch
+  num_epochs: 30         # Extended for better convergence
+  warmup_epochs: 1
+  freeze_encoder_epochs: 30  # Decoder-only training (Option A: avoid catastrophic unfreeze)
+  
+# Data Configuration
+data:
+  dataset_type: "nyu"    # or "custom", "kitti", "hypersim"
+  train_path: "data/nyu_depth/train"
+  val_path: "data/nyu_depth/test"    # last 529 files used as val (first 125 reserved for test)
+  image_size: 518        # Matches paper's training resolution
+  
+# Loss Configuration
+loss:
+  use_gradient_matching: true  # Paper recommends this
+  use_scale_invariant: true
+  
+# Optimizer
+optimizer:
+  type: "adam"
+  weight_decay: 0.0001
+
+# LoRA Configuration (optional — enable to adapt encoder with minimal params)
+lora:
+  enabled: true             # Set to true to use LoRA
+  rank: 8                    # Rank of LoRA matrices (4-16 typical, higher = more capacity)
+  alpha: 16.0                # Scaling factor (usually 2× rank)
+  dropout: 0.05              # Dropout on LoRA path
+  target_modules:            # Which encoder layers to inject LoRA into
+    - "qkv"                  # Attention Q/K/V projection
+    - "proj"                 # Attention output projection
+  lr_multiplier: 1.0         # LoRA LR = base_lr × this (1.0 = same as encoder LR)
